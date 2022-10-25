@@ -1,1 +1,12 @@
-<p>costs works!</p>
+<div class="wrapper">
+  <span>COSTS</span>
+  <div class="select-currency">
+    <app-currency
+      [paymentCurrencies]="exchangeRates.paymentCurrencies"
+      [initialValue]="selectedCurrency.currency"
+      (selectedCurrency)="onCurrencyChange($event)"
+    ></app-currency>
+    <span>1 {{baseCurrency.currency}}
+      = {{(selectedCurrency.exchangeRate / baseCurrency.exchangeRate) | number : '1.4-4'}} {{selectedCurrency.currency}}</span>
+  </div>
+</div>

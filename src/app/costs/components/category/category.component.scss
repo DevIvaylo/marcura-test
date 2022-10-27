@@ -1,0 +1,30 @@
+.table-section {
+  border: 1px solid lightgray;
+  margin: 0 15px 15px 15px;
+}
+
+.table-header {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid lightgray;
+  background-color: #25a3dd;
+  color: white;
+  font-weight: bold;
+}
+
+.header-item {
+  flex: 0 1 calc(17% - 8px);
+  padding: 20px 0 20px 10px;
+}
+
+.total {
+  display: flex;
+  flex-flow: row wrap;
+  border-top: 1px solid lightgray;
+}
+
+.total-item{
+  flex: 0 1 calc(17% - 8px);
+  padding: 20px 0 20px 10px;
+  font-weight: bold;
+}

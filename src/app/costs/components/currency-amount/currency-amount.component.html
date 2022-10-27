@@ -1,0 +1,15 @@
+<div class="quoted-currency">
+      <span class="currency-info">
+        {{selectedCurrency.currency}}
+      </span>
+  <span class="amount">
+          <input *ngIf="isEditable" [(ngModel)]="initialAmount"
+                 (ngModelChange)="onAmountChange($event)"
+                 [value]="amount * selectedCurrency.exchangeRate | number : '1.2-2'">
+        <span *ngIf="!isEditable">{{amount * selectedCurrency.exchangeRate | number : '1.2-2'}}</span>
+      </span>
+</div>
+<div class="currency-info">
+  <span>{{baseCurrency.currency}}</span> {{amount * baseCurrency.exchangeRate | number : '1.2-2'}}
+</div>
+

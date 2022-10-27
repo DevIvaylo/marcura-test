@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="header">
   <span>COSTS</span>
   <div class="select-currency">
     <app-currency
@@ -10,3 +10,11 @@
       = {{(selectedCurrency.exchangeRate / baseCurrency.exchangeRate) | number : '1.4-4'}} {{selectedCurrency.currency}}</span>
   </div>
 </div>
+
+<app-category
+  *ngFor="let category of costs.costs"
+  [category]="category"
+  [baseCurrency]="baseCurrency"
+  [selectedCurrency]="selectedCurrency"
+>
+</app-category>

@@ -1,0 +1,29 @@
+<div class="section">
+  <div class="item">
+    {{expenseItem.name}}
+  </div>
+
+  <div class="item">
+    <span *ngIf="expenseItem.costItemAlias">
+      {{expenseItem.costItemAlias.accountingCode}}
+    </span>
+  </div>
+  <div class="item"></div>
+  <div class="item">
+    <app-currency-amount
+      [baseCurrency]="baseCurrency"
+      [selectedCurrency]="selectedCurrency"
+      [amount]="quotedAmount">
+    </app-currency-amount>
+  </div>
+  <div class="item">
+    <app-currency-amount
+      [baseCurrency]="baseCurrency"
+      [selectedCurrency]="selectedCurrency"
+      [amount]="screenedAmount"
+      [isEditable]="true"
+      (onScreenedAmountChanged)="onScreenedAmountChange($event)">
+    </app-currency-amount>
+  </div>
+</div>
+

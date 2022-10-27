@@ -1,6 +1,6 @@
 <form #form>
   <label id="currency" for="currency">Currency</label>
-  <select name="selectedCurrency" [(ngModel)]="initialValue"
+  <select class="currency-dropdown" name="selectedCurrency" [(ngModel)]="initialValue"
           (ngModelChange)="onCurrencySelect($event)">
     <option *ngFor="let currency of paymentCurrencies" [value]="currency.toCurrency"
             name="selectedValue">{{currency.toCurrency}}</option>

@@ -1,0 +1,39 @@
+<div class="table-section">
+  <div class="table-header">
+    <div class="header-item">{{category.name}}</div>
+    <div class="header-item">Account code</div>
+    <div class="header-item"></div>
+    <div class="header-item">Quoted</div>
+    <div class="header-item">Screened</div>
+    <div class="header-item"></div>
+  </div>
+  <app-category-item
+    *ngFor="let item of category.costItems"
+    [expenseItem]="item"
+    [selectedCurrency]="selectedCurrency"
+    [baseCurrency]="baseCurrency"
+    (amountChanged)="onScreenedAmountChange($event, item)"
+  ></app-category-item>
+  <div class="total">
+    <span class="total-item">
+      Total
+    </span>
+    <div class="total-item"></div>
+    <div class="total-item"></div>
+    <div class="total-item">
+      <app-currency-amount
+        [baseCurrency]="baseCurrency"
+        [selectedCurrency]="selectedCurrency"
+        [amount]="totalQuotedAmount">
+      </app-currency-amount>
+    </div>
+    <div class="total-item">
+      <app-currency-amount
+        [baseCurrency]="baseCurrency"
+        [selectedCurrency]="selectedCurrency"
+        [amount]="totalScreenedAmount">
+      </app-currency-amount>
+    </div>
+    <div class="total-item"></div>
+  </div>
+</div>

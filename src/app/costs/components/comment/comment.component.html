@@ -1,0 +1,22 @@
+<div class="comment-wrapper">
+  <div class="comment-info">{{comment.type}}</div>
+  <div class="comment-info">{{comment.comment}}</div>
+  <div class="comment-info"></div>
+  <div class="comment-info"></div>
+  <div class="comment-info"></div>
+  <span class="comment-info">{{comment.author}}</span>
+  <span class="comment-info">{{comment.date| date: 'd MMM y h:mm' }}</span>
+  <div class="comment-info">
+    <span class="glyphicon glyphicon-trash"></span>
+    <span class="glyphicon glyphicon-pencil"></span>
+  </div>
+</div>
+<div class="comment-action-wrapper">
+  <form class="form-inline">
+    <select class="select-comment-type form-control">
+      <option>Select comment type</option>
+    </select>
+    <input class="type-comment form-control" type="text" placeholder="Type comment">
+    <button type="submit" class="btn btn-default add-btn" disabled>Add</button>
+  </form>
+</div>

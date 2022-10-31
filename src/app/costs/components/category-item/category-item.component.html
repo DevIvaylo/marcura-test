@@ -2,7 +2,6 @@
   <div class="item">
     {{expenseItem.name}}
   </div>
-
   <div class="item">
     <span *ngIf="expenseItem.costItemAlias">
       {{expenseItem.costItemAlias.accountingCode}}
@@ -25,5 +24,24 @@
       (onScreenedAmountChanged)="onScreenedAmountChange($event)">
     </app-currency-amount>
   </div>
+  <div class="item" *ngIf="expenseItem.comments">
+    <div class="comments flex">
+      <i (click)="toggleComments()" class="glyphicon glyphicon-comment"></i>
+      <span>{{expenseItem.comments.length || 0}}</span>
+      <i class="glyphicon glyphicon-move"></i>
+    </div>
+  </div>
+  <div class="item" *ngIf="!expenseItem.comments">
+    <div class="comments flex">
+      <i class="glyphicon glyphicon-comment"></i>
+      <span>0</span>
+    </div>
+  </div>
 </div>
 
+<div *ngIf="showComments">
+  <app-comment
+    *ngFor="let comment of expenseItem.comments"
+    [comment]="comment"
+  ></app-comment>
+</div>

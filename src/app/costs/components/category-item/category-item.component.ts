@@ -9,6 +9,7 @@ import {BaseCurrency, CostItem, Types} from "../../../models";
 export class CategoryItemComponent {
   screenedAmount: number;
   quotedAmount: number;
+  showComments = false;
   private _expenseItem: CostItem;
   @Input() selectedCurrency: BaseCurrency;
   @Input() baseCurrency: BaseCurrency;
@@ -27,5 +28,9 @@ export class CategoryItemComponent {
   onScreenedAmountChange(event: number) {
     this.screenedAmount = event;
     this.amountChanged.emit(event);
+  }
+
+  toggleComments() {
+    this.showComments = !this.showComments;
   }
 }

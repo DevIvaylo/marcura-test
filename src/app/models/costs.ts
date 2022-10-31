@@ -26,7 +26,7 @@ export interface CostItem {
   costItemAlias: CostItemAlias;
   annotation: Annotation;
   costs: CostDetails[];
-  comments: Comment[];
+  comments: Comments[];
 }
 
 export interface CostItemAlias {
@@ -50,7 +50,7 @@ export enum Types {
   Screened = 'Screened'
 }
 
-export interface Comment {
+export interface Comments {
   id: number;
   daStage: string;
   persona: string;

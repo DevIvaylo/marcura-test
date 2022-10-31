@@ -5,7 +5,7 @@
   <span class="amount">
           <input *ngIf="isEditable" [(ngModel)]="initialAmount"
                  (ngModelChange)="onAmountChange($event)"
-                 [value]="amount * selectedCurrency.exchangeRate | number : '1.2-2'">
+                 [value]="amount * selectedCurrency.exchangeRate">
         <span *ngIf="!isEditable">{{amount * selectedCurrency.exchangeRate | number : '1.2-2'}}</span>
       </span>
 </div>

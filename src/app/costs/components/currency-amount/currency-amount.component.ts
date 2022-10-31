@@ -33,6 +33,6 @@ export class CurrencyAmountComponent implements OnInit {
   }
 
   onAmountChange(amount: string) {
-    this.onScreenedAmountChanged.emit(parseFloat(amount))
+    this.onScreenedAmountChanged.emit(parseFloat(amount));
   }
 }
